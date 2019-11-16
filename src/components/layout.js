@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
+import Footer from './footer';
 import './layout.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -19,13 +20,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     // padding: 0,
     backgroundColor: 'lightGreen',
-  },
-  flexContainer2: {
-    padding: '1.45rem 1.0875rem',
-    flexDirection: 'column',
-    display: 'flex',
-    justifyContent: 'space-between',
-    backgroundColor: 'cyan',
   },
   mainContainer: {
     margin: '0 auto',
@@ -52,18 +46,19 @@ const Layout = ({ children }) => {
   return (
     <>
       <div>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header />
       </div>
       <div className={classes.mainContainer}>
         <main>{children}</main>
       </div>
-      <footer>
+      {/* <Footer siteTitle={data.site.siteMetadata.title} /> */}
+      {/* <footer>
           ©
         {' '}
         {new Date().getFullYear()}
           , Built with
         <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      </footer> */}
     </>
   );
 };

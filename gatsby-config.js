@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'asdf',
+    title: 'Cambridge Metalsmiths',
     description: 'Cambridgemetalsmiths is a local company.',
     author: '@iamstevedavis',
   },

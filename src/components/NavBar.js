@@ -8,8 +8,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     padding: 0,
-    backgroundColor: 'lightBlue',
+    backgroundColor: 'black',
     flexWrap: 'wrap',
+    color: 'white',
   },
 }));
 
@@ -21,13 +22,13 @@ const NavBar = () => {
       <MenuItem component={Link} to="/page-2/">
         All Shapes and Sizes
       </MenuItem>
-      <MenuItem>
+      <MenuItem component={Link} to="/">
         Emblems & Motifs
       </MenuItem>
-      <MenuItem>
+      <MenuItem component={Link} to="/">
         Sign Types
       </MenuItem>
-      <MenuItem>
+      <MenuItem component={Link} to="/">
         Colours & Pricing
       </MenuItem>
     </MenuList>
