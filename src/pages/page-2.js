@@ -1,7 +1,7 @@
-import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
+import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -47,9 +47,12 @@ const SecondPage = () => {
   return (
     // 792x1030
     <Layout>
-      <SEO title="Alh Shapes and Sizes" />
+      <SEO title="All Shapes and Sizes" />
       <div className={classes.flexContainera}>
-        <Img className={classes.image} fluid={data.placeholderImage.childImageSharp.fluid} />
+        <Img
+          className={classes.image}
+          fluid={data.placeholderImage.childImageSharp.fluid}
+        />
       </div>
 
       {/* <h1>Hi people</h1>

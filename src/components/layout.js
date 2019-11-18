@@ -5,14 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
-
+import React from 'react';
 import Header from './header';
-import Footer from './footer';
 import './layout.css';
+
 
 const useStyles = makeStyles((theme) => ({
   flexContainer: {
@@ -23,9 +22,8 @@ const useStyles = makeStyles((theme) => ({
   },
   mainContainer: {
     margin: '0 auto',
-    maxWidth: 960,
-    padding: '0px 1.0875rem 1.45rem',
-    paddingTop: 0,
+    maxWidth: 1024,
+    padding: '1.0875rem 1.45rem',
     backgroundColor: 'lightGray',
   },
 }));
