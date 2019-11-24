@@ -10,6 +10,9 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
   },
   image: {},
+  contentContainer: {
+    paddingTop: '2em',
+  },
 }));
 
 const IndexPage = () => {
@@ -33,26 +36,32 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h3>Personalized Cast Metal Signs from Canada&#39;s Foremost Designers and Manufacturers</h3>
-      <p>
-        Our quality made, individually crafted Cast Metal Signs add character and create an elegant
-        introduction to homes, farms, offices, cottages, and more. Our process uses handmade patterns
-         to produce a relief image in foundry sand. Molten aluminium is poured into the mould and
-         left to harden. Many finishing steps follow, to prepare the sign for our skilled artists,
-         who apply the final colouring touches. The result is a finely crafted, personalized sign,
-         ready to stand in a place of prominence and announce your home or business.
-         Truly a statement that endures!
-      </p>
-      <div>
-        {/* These will be out of order due to the fact that
-        they are named main_1 to 4 and not sorted. */}
-        {query.allImageSharp.edges.map((edge) => {
-          const { originalName } = edge.node.fluid;
-          if (originalName.includes('main')) {
-            return (<div><Img fluid={edge.node.fluid} /></div>);
-          }
-          return (<></>);
-        })}
+      <div className={classes.contentContainer}>
+        <h3>
+          Personalized Cast Metal Signs from Canada&#39;s Foremost Designers and Manufacturers
+        </h3>
+        <p>
+          Our quality made, individually crafted Cast Metal Signs add character and create an
+          elegant introduction to homes, farms, offices, cottages, and more. Our process uses
+          handmade patterns to produce a relief image in foundry sand. Molten aluminium is
+          poured into the mould and left to harden. Many finishing steps follow, to prepare
+          the sign for our skilled artists, who apply the final colouring touches. The
+          result is a finely crafted, personalized sign, ready to stand in a place of
+          prominence and announce your home or business. Truly a statement that endures!
+        </p>
+        <div>
+          {/*
+            * These will be out of order due to the fact that
+            * they are named main_1 to 4 and not sorted.
+            */}
+          {query.allImageSharp.edges.map((edge) => {
+            const { originalName } = edge.node.fluid;
+            if (originalName.includes('main')) {
+              return (<div><Img fluid={edge.node.fluid} /></div>);
+            }
+            return (<></>);
+          })}
+        </div>
       </div>
     </Layout>
   );

@@ -6,27 +6,8 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const useStyles = makeStyles(() => ({
-  // flexContainer: {
-  //   // padding: '1.45rem 1.0875rem',
-  //   paddingTop: '1rem',
-  //   paddingBottom: '1rem',
-  //   paddingLeft: '5rem',
-  //   paddingRight: '5rem',
-  //   display: 'flex',
-  //   justifyContent: 'space-between',
-  //   backgroundColor: 'black',
-  //   flexWrap: 'wrap',
-  // },
-  // link: {
-  //   color: 'black',
-  //   textDecoration: 'none',
-  // },
   flexContainera: {
     justifyContent: 'center',
-  },
-  image: {
-    // width: '792px',
-    // height: '1030px',
   },
 }));
 
@@ -54,17 +35,6 @@ const SecondPage = () => {
           fluid={data.placeholderImage.childImageSharp.fluid}
         />
       </div>
-
-      {/* <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
-    </div>
-    <Button variant="contained" color="primary">
-      Hello World
-    </Button>
-    <Link to="/page-2/">Go to page 2</Link> */}
     </Layout>
   );
 };

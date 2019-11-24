@@ -22,29 +22,17 @@ const NavBar = () => {
       <MenuItem component={Link} to="/page-2/">
         All Shapes and Sizes
       </MenuItem>
-      <MenuItem component={Link} to="/page-3">
+      <MenuItem component={Link} to="/page-3/">
         Emblems & Motifs
       </MenuItem>
-      <MenuItem component={Link} to="/">
+      <MenuItem component={Link} to="/page-4/">
         Sign Types
       </MenuItem>
-      <MenuItem component={Link} to="/">
-        Colours & Pricing
+      <MenuItem component={Link} to="/page-5/">
+        General Information
       </MenuItem>
     </MenuList>
   );
 };
 
 export default NavBar;
-
-{ /* <MenuList button onMouseOver={handleClick} onMouseOut={handleClick}>
-        Inbox
-        {open ? <ExpandLess /> : <ExpandMore />}
-        <Collapse in={!open} timeout="auto" unmountOnExit>
-          <MenuList component="div" disablePadding>
-            <MenuItem button className={classes.nested}>
-              asd
-            </MenuItem>
-          </MenuList>
-        </Collapse>
-      </MenuList> */ }

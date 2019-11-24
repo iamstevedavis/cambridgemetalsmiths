@@ -34,31 +34,23 @@ const IndexPage = () => {
   }
 `);
 
-  const [currentSubMenu, setSubMenuKey] = React.useState('birdsAndWaterfowl');
+  const [currentSubMenu, setSubMenuKey] = React.useState('forTheProfessions');
   const subMenuItemsForPage = [
     {
-      linkText: 'Birds & Waterfowl',
-      key: 'birdsAndWaterfowl',
+      linkText: 'For the Professions',
+      key: 'forTheProfessions',
     },
     {
-      linkText: 'Animals & Farm',
-      key: 'animalsAndFarm',
+      linkText: 'Golf Course',
+      key: 'golfCourse',
     },
     {
-      linkText: 'Dogs & Cats',
-      key: 'dogsAndCats',
+      linkText: 'Mounting Methods',
+      key: 'mountingMethods',
     },
     {
-      linkText: 'Aquatic & Nautical',
-      key: 'aquaticAndNautical',
-    },
-    {
-      linkText: 'Flowers & Fruit',
-      key: 'flowersAndFruit',
-    },
-    {
-      linkText: 'Misc.',
-      key: 'misc',
+      linkText: 'Municipal and BIA',
+      key: 'municipalAndBia',
     },
   ];
   const onSubMenuItemClick = (subMenuKey) => {
