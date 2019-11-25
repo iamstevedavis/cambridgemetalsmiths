@@ -20,7 +20,11 @@ const Footer = ({ siteTitle }) => {
         <h3>{siteTitle}</h3>
       </div>
       <div className={classes.footerFlexContainer}>
-        <span>29 Rife Ave.,Cambridge ON  N3C 2G6    Phone: (519) 658-3124    Email: terry@cambridgemetalsmiths.com</span>
+        <span>
+          29 Rife Ave.,Cambridge ON  N3C 2G6
+          Phone: (519) 658-3124
+          Email: terry@cambridgemetalsmiths.com
+        </span>
       </div>
     </footer>
   );

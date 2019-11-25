@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
+import { isBrowser } from 'react-device-detect';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SubNavBar from '../components/subnavbar';
@@ -23,11 +24,11 @@ const pageComponents = (key) => {
       return (
         <>
           <p>
-            White type on a Black background is most readable, (or Black on White). Forest Green with
-            Gold is quite striking although less readable in low light. Standard background colours
-            are: Black, White, Forest Green, Dark Brown, Ivory. For custom background colours the
-            cost is $70. Exact matches cannot be guaranteed. Special colours on type, borders and
-            emblems is at no extra charge.
+            White type on a Black background is most readable, (or Black on White). Forest Green
+            with Gold is quite striking although less readable in low light. Standard background
+            colours are: Black, White, Forest Green, Dark Brown, Ivory. For custom background
+            colours the cost is $70. Exact matches cannot be guaranteed. Special colours on type,
+            borders and emblems is at no extra charge.
           </p>
           <p>
             Included: Stainless screws and composite washers are included for wall mounted castings,
@@ -39,9 +40,10 @@ const pageComponents = (key) => {
         </>
       );
     case 'prices':
-      return (
-        <object type="application/pdf" aria-label="" width="100%" height="1257px" data={prices} />
-      );
+      if (isBrowser) {
+        return (<object type="application/pdf" aria-label="" width="100%" height="1257px" data={prices} />);
+      }
+      break;
     default:
       return (<></>);
   }
