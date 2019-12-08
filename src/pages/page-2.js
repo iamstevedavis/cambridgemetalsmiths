@@ -1,29 +1,31 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
-import React from 'react';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import { makeStyles } from "@material-ui/core/styles"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+import React from "react"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const useStyles = makeStyles(() => ({
   flexContainera: {
-    justifyContent: 'center',
+    justifyContent: "center",
   },
-}));
+}))
 
 const SecondPage = () => {
-  const classes = useStyles();
+  const classes = useStyles()
   const data = useStaticQuery(graphql`
-  query {
-    placeholderImage: file(relativePath: { eq: "AllShapesSizes-17Oct2011.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 792, maxHeight: 1030) {
-          ...GatsbyImageSharpFluid
+    query {
+      placeholderImage: file(
+        relativePath: { eq: "AllShapesSizes-17Oct2011.jpg" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 792, maxHeight: 1030) {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }
-  }
-`);
+  `)
 
   return (
     // 792x1030
@@ -36,7 +38,7 @@ const SecondPage = () => {
         />
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default SecondPage;
+export default SecondPage

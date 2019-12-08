@@ -1,21 +1,21 @@
-import { MenuItem, MenuList } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'gatsby';
-import React from 'react';
+import { MenuItem, MenuList } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
+import { Link } from "gatsby"
+import React from "react"
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   flexContainer: {
-    display: 'flex',
-    flexDirection: 'row',
+    display: "flex",
+    flexDirection: "row",
     padding: 0,
-    backgroundColor: 'black',
-    flexWrap: 'wrap',
-    color: 'white',
+    backgroundColor: "black",
+    flexWrap: "wrap",
+    color: "white",
   },
-}));
+}))
 
 const NavBar = () => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <MenuList className={classes.flexContainer}>
@@ -32,7 +32,7 @@ const NavBar = () => {
         General Information
       </MenuItem>
     </MenuList>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

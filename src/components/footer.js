@@ -1,18 +1,18 @@
-import { makeStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
-import React from 'react';
+import { makeStyles } from "@material-ui/core/styles"
+import PropTypes from "prop-types"
+import React from "react"
 
 const useStyles = makeStyles(() => ({
   footerFlexContainer: {
-    flexDirection: 'row',
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: 'cyan',
+    flexDirection: "row",
+    display: "flex",
+    justifyContent: "center",
+    backgroundColor: "cyan",
   },
-}));
+}))
 
 const Footer = ({ siteTitle }) => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <footer>
@@ -21,21 +21,20 @@ const Footer = ({ siteTitle }) => {
       </div>
       <div className={classes.footerFlexContainer}>
         <span>
-          29 Rife Ave.,Cambridge ON  N3C 2G6
-          Phone: (519) 658-3124
-          Email: terry@cambridgemetalsmiths.com
+          29 Rife Ave.,Cambridge ON N3C 2G6 Phone: (519) 658-3124 Email:
+          terry@cambridgemetalsmiths.com
         </span>
       </div>
     </footer>
-  );
-};
+  )
+}
 
 Footer.propTypes = {
   siteTitle: PropTypes.string,
-};
+}
 
 Footer.defaultProps = {
-  siteTitle: '',
-};
+  siteTitle: "",
+}
 
-export default Footer;
+export default Footer

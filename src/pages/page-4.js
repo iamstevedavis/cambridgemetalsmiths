@@ -1,63 +1,63 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
-import React from 'react';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import SubNavBar from '../components/subnavbar';
+import { makeStyles } from "@material-ui/core/styles"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+import React from "react"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import SubNavBar from "../components/subnavbar"
 
 const useStyles = makeStyles(() => ({
   flexContainera: {
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   image: {},
   contentContainer: {
-    paddingTop: '2em',
+    paddingTop: "2em",
   },
-}));
+}))
 
 const IndexPage = () => {
-  const classes = useStyles();
+  const classes = useStyles()
   const query = useStaticQuery(graphql`
-  query {
-    allImageSharp {
-      edges {
-        node {
-          id
-          fluid(maxWidth: 1024) {
-            ...GatsbyImageSharpFluid
-            originalName
+    query {
+      allImageSharp {
+        edges {
+          node {
+            id
+            fluid(maxWidth: 1024) {
+              ...GatsbyImageSharpFluid
+              originalName
+            }
           }
         }
       }
     }
-  }
-`);
+  `)
 
-  const [currentSubMenu, setSubMenuKey] = React.useState('forTheProfessions');
+  const [currentSubMenu, setSubMenuKey] = React.useState("forTheProfessions")
   const subMenuItemsForPage = [
     {
-      linkText: 'For the Professions',
-      key: 'forTheProfessions',
+      linkText: "For the Professions",
+      key: "forTheProfessions",
     },
     {
-      linkText: 'Golf Course',
-      key: 'golfCourse',
+      linkText: "Golf Course",
+      key: "golfCourse",
     },
     {
-      linkText: 'Mounting Methods',
-      key: 'mountingMethods',
+      linkText: "Mounting Methods",
+      key: "mountingMethods",
     },
     {
-      linkText: 'Municipal and BIA',
-      key: 'municipalAndBia',
+      linkText: "Municipal and BIA",
+      key: "municipalAndBia",
     },
-  ];
-  const onSubMenuItemClick = (subMenuKey) => {
+  ]
+  const onSubMenuItemClick = subMenuKey => {
     if (currentSubMenu !== subMenuKey) {
-      setSubMenuKey(subMenuKey);
+      setSubMenuKey(subMenuKey)
     }
-  };
+  }
 
   return (
     <Layout>
@@ -65,27 +65,31 @@ const IndexPage = () => {
         onSubMenuItemClick={onSubMenuItemClick}
         subMenuItems={subMenuItemsForPage}
       />
-      <SEO title="Home" />
+      <SEO title="Sign Types" />
       <div className={classes.contentContainer}>
         <div>
           {/*
-            * These will be out of order due to the fact that
-            * they are named main_1 to 4 and not sorted.
-            */}
-          {query.allImageSharp.edges.map((edge) => {
-            const { originalName } = edge.node.fluid;
+           * These will be out of order due to the fact that
+           * they are named main_1 to 4 and not sorted.
+           */}
+          {query.allImageSharp.edges.map(edge => {
+            const { originalName } = edge.node.fluid
             if (originalName.includes(currentSubMenu)) {
-              return (<div><Img fluid={edge.node.fluid} /></div>);
+              return (
+                <div>
+                  <Img fluid={edge.node.fluid} />
+                </div>
+              )
             }
-            return (<></>);
+            return <></>
           })}
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage
 
 // https://github.com/gatsbyjs/gatsby/issues/4843
 // This query can be pasted in the graphiql console
