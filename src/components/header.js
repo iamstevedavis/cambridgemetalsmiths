@@ -25,7 +25,7 @@ const Header = () => {
   const classes = useStyles()
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "cambridgeSign.png" }) {
+      placeholderImage: file(relativePath: { eq: "cambridgeSign.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 278, maxHeight: 206) {
             ...GatsbyImageSharpFluid

@@ -22,7 +22,7 @@ const pageComponents = (key, images) => {
   switch (key) {
     case "information": {
       const image1 = images.find(
-        x => x.node.fluid.originalName === "information_1.png"
+        x => x.node.fluid.originalName === "information_1.jpg"
       )
       const image2 = images.find(
         x => x.node.fluid.originalName === "information_2.jpg"
@@ -142,7 +142,7 @@ const pageComponents = (key, images) => {
     }
     case "colours": {
       const image1 = images.find(
-        x => x.node.fluid.originalName === "colours.png"
+        x => x.node.fluid.originalName === "colours.jpg"
       )
       return (
         <>
@@ -166,7 +166,7 @@ const pageComponents = (key, images) => {
         </>
       )
     }
-    case "prices":
+    case "prices": {
       if (isBrowser) {
         return (
           <object
@@ -178,7 +178,16 @@ const pageComponents = (key, images) => {
           />
         )
       }
-      break
+      const image1 = images.find(
+        x => x.node.fluid.originalName === "prices_1.jpg"
+      )
+      return (
+        <Img
+          // style={{ flexBasis: "30em", marginRight: "1em" }}
+          fluid={image1.node.fluid}
+        />
+      )
+    }
     default:
       return <></>
   }
