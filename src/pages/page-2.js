@@ -28,7 +28,6 @@ const SecondPage = () => {
   `)
 
   return (
-    // 792x1030
     <Layout>
       <SEO title="All Shapes and Sizes" />
       <div className={classes.flexContainera}>
