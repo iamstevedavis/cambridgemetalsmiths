@@ -12,7 +12,7 @@ import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   flexContainer: {
     display: "flex",
     flexDirection: "row",
@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
           , Built with
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer> */}
-      <Footer></Footer>
+      <Footer />
     </>
   )
 }
