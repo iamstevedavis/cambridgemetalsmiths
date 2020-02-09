@@ -7,7 +7,8 @@ const useStyles = makeStyles(() => ({
     flexDirection: "row",
     display: "flex",
     justifyContent: "center",
-    backgroundColor: "cyan",
+    color: "white",
+    backgroundColor: "black",
   },
 }))
 

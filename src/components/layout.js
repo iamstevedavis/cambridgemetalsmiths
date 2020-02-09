@@ -9,6 +9,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import PropTypes from "prop-types"
 import React from "react"
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
 const useStyles = makeStyles(theme => ({
@@ -44,6 +45,7 @@ const Layout = ({ children }) => {
           , Built with
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer> */}
+      <Footer></Footer>
     </>
   )
 }

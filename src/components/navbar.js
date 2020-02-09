@@ -19,16 +19,16 @@ const NavBar = () => {
 
   return (
     <MenuList className={classes.flexContainer}>
-      <MenuItem component={Link} to="/page-2/">
+      <MenuItem component={Link} to="/shapesandsizes/">
         All Shapes and Sizes
       </MenuItem>
-      <MenuItem component={Link} to="/page-3/">
+      <MenuItem component={Link} to="/emblemsandmotifs/">
         Emblems & Motifs
       </MenuItem>
-      <MenuItem component={Link} to="/page-4/">
+      <MenuItem component={Link} to="/signtypes/">
         Sign Types
       </MenuItem>
-      <MenuItem component={Link} to="/page-5/">
+      <MenuItem component={Link} to="/general/">
         General Information
       </MenuItem>
     </MenuList>
