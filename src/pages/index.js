@@ -19,7 +19,7 @@ const IndexPage = () => {
   const classes = useStyles()
   const query = useStaticQuery(graphql`
     query {
-      allImageSharp {
+      allImageSharp(filter: {fluid: {originalName: {regex: "/^main_\\w+/"}}}) {
         edges {
           node {
             id
@@ -32,6 +32,20 @@ const IndexPage = () => {
       }
     }
   `)
+
+  query.allImageSharp.edges.sort(function _sort(a, b) {
+    const nameA = a.node.fluid.originalName.toUpperCase() // ignore upper and lowercase
+    const nameB = b.node.fluid.originalName.toUpperCase() // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1
+    }
+    if (nameA > nameB) {
+      return 1
+    }
+
+    // names must be equal
+    return 0
+  })
 
   return (
     <Layout>
@@ -53,20 +67,12 @@ const IndexPage = () => {
           endures!
         </p>
         <div>
-          {/*
-           * These will be out of order due to the fact that
-           * they are named main_1 to 4 and not sorted.
-           */}
           {query.allImageSharp.edges.map(edge => {
-            const { originalName } = edge.node.fluid
-            if (originalName.includes("main")) {
-              return (
-                <div>
-                  <Img fluid={edge.node.fluid} />
-                </div>
-              )
-            }
-            return <></>
+            return (
+              <div>
+                <Img fluid={edge.node.fluid} />
+              </div>
+            )
           })}
         </div>
       </div>
@@ -75,27 +81,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-// https://github.com/gatsbyjs/gatsby/issues/4843
-// This query can be pasted in the graphiql console
-// and if that bug above is resolved will return just main_x items
-// const data = useStaticQuery(graphql`
-// query {
-//   allImageSharp(filter: {fluid: {originalName: {regex: "/^main_\\w+/gm"}}}) {
-//     edges {
-//       node {
-//         id
-//         fluid {
-//           base64
-//           src
-//           aspectRatio
-//           src
-//           srcSet
-//         }
-//       }
-//     }
-//   }
-// }
-// `);
-// {data.allImageSharp.edges.map((edge) => (<div><Img fluid={edge.node.fluid} /></div>))}
-//

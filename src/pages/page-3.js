@@ -98,27 +98,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-// https://github.com/gatsbyjs/gatsby/issues/4843
-// This query can be pasted in the graphiql console
-// and if that bug above is resolved will return just main_x items
-// const data = useStaticQuery(graphql`
-// query {
-//   allImageSharp(filter: {fluid: {originalName: {regex: "/^main_\\w+/gm"}}}) {
-//     edges {
-//       node {
-//         id
-//         fluid {
-//           base64
-//           src
-//           aspectRatio
-//           src
-//           srcSet
-//         }
-//       }
-//     }
-//   }
-// }
-// `);
-// {data.allImageSharp.edges.map((edge) => (<div><Img fluid={edge.node.fluid} /></div>))}
-//
