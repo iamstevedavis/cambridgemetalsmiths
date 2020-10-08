@@ -1,7 +1,8 @@
-import { makeStyles } from "@material-ui/core/styles"
 import { graphql, useStaticQuery } from "gatsby"
+
 import Img from "gatsby-image"
 import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -11,7 +12,7 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const SecondPage = () => {
+const ShapesAndSizes = () => {
   const classes = useStyles()
   const data = useStaticQuery(graphql`
     query {
@@ -40,4 +41,4 @@ const SecondPage = () => {
   )
 }
 
-export default SecondPage
+export default ShapesAndSizes

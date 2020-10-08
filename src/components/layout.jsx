@@ -5,21 +5,21 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import { makeStyles } from "@material-ui/core/styles"
-import PropTypes from "prop-types"
-import React from "react"
-import Header from "./header"
-import Footer from "./footer"
 import "./layout.css"
 
+import { graphql, useStaticQuery } from "gatsby"
+
+// import Header from "./header"
+import PropTypes from "prop-types"
+import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
+// import Grid from "@material-ui/core/Grid"
+import Footer from "./footer"
+import ElevateAppBar from "./header"
+
 const useStyles = makeStyles(() => ({
-  flexContainer: {
-    display: "flex",
-    flexDirection: "row",
-    backgroundColor: "lightGreen",
-  },
   mainContainer: {
-    margin: "0 auto",
+    margin: "auto",
     maxWidth: 1024,
     padding: "1.0875rem 1.45rem",
     backgroundColor: "lightGray",
@@ -28,15 +28,24 @@ const useStyles = makeStyles(() => ({
 
 const Layout = ({ children }) => {
   const classes = useStyles()
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
 
   return (
     <>
-      <div>
-        <Header />
-      </div>
+      <ElevateAppBar siteTitle={data.site.siteMetadata.title} />
+
       <div className={classes.mainContainer}>
         <main>{children}</main>
       </div>
+
       {/* <Footer siteTitle={data.site.siteMetadata.title} /> */}
       {/* <footer>
           ©

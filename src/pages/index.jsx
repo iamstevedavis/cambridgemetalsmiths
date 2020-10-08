@@ -1,22 +1,15 @@
-import { makeStyles } from "@material-ui/core/styles"
 import { graphql, useStaticQuery } from "gatsby"
+
 import Img from "gatsby-image"
 import React from "react"
+// import { makeStyles } from "@material-ui/core/styles"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const useStyles = makeStyles(() => ({
-  flexContainera: {
-    justifyContent: "center",
-  },
-  image: {},
-  contentContainer: {
-    paddingTop: "2em",
-  },
-}))
+// const useStyles = makeStyles(() => ({}))
 
-const IndexPage = () => {
-  const classes = useStyles()
+const Home = () => {
+  // const classes = useStyles()
   const query = useStaticQuery(graphql`
     query {
       allImageSharp(filter: {fluid: {originalName: {regex: "/^main_\\w+/"}}}) {
@@ -48,9 +41,9 @@ const IndexPage = () => {
   })
 
   return (
-    <Layout>
-      <SEO title="Home" />
-      <div className={classes.contentContainer}>
+    <>
+      <Layout>
+        <SEO title="Home" />
         <h3>
           Personalized Cast Metal Signs from Canada&#39;s Foremost Designers and
           Manufacturers
@@ -75,9 +68,9 @@ const IndexPage = () => {
             )
           })}
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 
-export default IndexPage
+export default Home

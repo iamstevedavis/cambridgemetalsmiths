@@ -1,7 +1,8 @@
-import { makeStyles } from "@material-ui/core/styles"
 import { graphql, useStaticQuery } from "gatsby"
+
 import Img from "gatsby-image"
 import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SubNavBar from "../components/subnavbar"
@@ -16,7 +17,7 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const IndexPage = () => {
+const SignTypes = () => {
   const classes = useStyles()
   const query = useStaticQuery(graphql`
     query {
@@ -34,31 +35,23 @@ const IndexPage = () => {
     }
   `)
 
-  const [currentSubMenu, setSubMenuKey] = React.useState("birdsAndWaterfowl")
+  const [currentSubMenu, setSubMenuKey] = React.useState("forTheProfessions")
   const subMenuItemsForPage = [
     {
-      linkText: "Birds & Waterfowl",
-      key: "birdsAndWaterfowl",
+      linkText: "For the Professions",
+      key: "forTheProfessions",
     },
     {
-      linkText: "Animals & Farm",
-      key: "animalsAndFarm",
+      linkText: "Golf Course",
+      key: "golfCourse",
     },
     {
-      linkText: "Dogs & Cats",
-      key: "dogsAndCats",
+      linkText: "Mounting Methods",
+      key: "mountingMethods",
     },
     {
-      linkText: "Aquatic & Nautical",
-      key: "aquaticAndNautical",
-    },
-    {
-      linkText: "Flowers & Fruit",
-      key: "flowersAndFruit",
-    },
-    {
-      linkText: "Misc.",
-      key: "misc",
+      linkText: "Municipal and BIA",
+      key: "municipalAndBia",
     },
   ]
   const onSubMenuItemClick = subMenuKey => {
@@ -73,7 +66,7 @@ const IndexPage = () => {
         onSubMenuItemClick={onSubMenuItemClick}
         subMenuItems={subMenuItemsForPage}
       />
-      <SEO title="Emblems and Motifs" />
+      <SEO title="Sign Types" />
       <div className={classes.contentContainer}>
         <div>
           {/*
@@ -97,4 +90,28 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default SignTypes
+
+// https://github.com/gatsbyjs/gatsby/issues/4843
+// This query can be pasted in the graphiql console
+// and if that bug above is resolved will return just main_x items
+// const data = useStaticQuery(graphql`
+// query {
+//   allImageSharp(filter: {fluid: {originalName: {regex: "/^main_\\w+/gm"}}}) {
+//     edges {
+//       node {
+//         id
+//         fluid {
+//           base64
+//           src
+//           aspectRatio
+//           src
+//           srcSet
+//         }
+//       }
+//     }
+//   }
+// }
+// `);
+// {data.allImageSharp.edges.map((edge) => (<div><Img fluid={edge.node.fluid} /></div>))}
+//
