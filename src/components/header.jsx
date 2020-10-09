@@ -24,6 +24,10 @@ const useStyles = makeStyles({
     color: "white",
     "&:hover": { background: "DarkGray" },
   },
+  headerImage: {
+    width: "278px",
+    height: "75px",
+  },
 })
 
 function ElevationScroll(props) {
@@ -62,8 +66,7 @@ export default function ElevateAppBar(props) {
             <Grid container direction="row" spacing={3} xs={5}>
               <Grid item spacing={1}>
                 <Img
-                  style={{ width: "278px", height: "75px" }}
-                  className={classes.image}
+                  className={classes.headerImage}
                   fluid={headerLogoData.placeholderImage.childImageSharp.fluid}
                 />
               </Grid>

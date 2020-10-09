@@ -11,7 +11,6 @@ const useStyles = makeStyles(() => ({
   flexContainera: {
     justifyContent: "center",
   },
-  image: {},
   contentContainer: {
     paddingTop: "2em",
   },
