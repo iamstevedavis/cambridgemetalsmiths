@@ -25,6 +25,7 @@ const useStyles = makeStyles(() => ({
     maxWidth: 1024,
     padding: "1.0875rem 1.45rem",
     backgroundColor: "lightGray",
+    minHeight: "1024px",
   },
 }))
 
