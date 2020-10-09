@@ -1,7 +1,8 @@
-import { makeStyles } from "@material-ui/core/styles"
 import { graphql, useStaticQuery } from "gatsby"
+
 import Img from "gatsby-image"
 import React from "react"
+import { makeStyles } from "@material-ui/core/styles"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SubNavBar from "../components/subnavbar"
@@ -16,7 +17,7 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const IndexPage = () => {
+const EmblemsAndMotifs = () => {
   const classes = useStyles()
   const query = useStaticQuery(graphql`
     query {
@@ -34,23 +35,31 @@ const IndexPage = () => {
     }
   `)
 
-  const [currentSubMenu, setSubMenuKey] = React.useState("forTheProfessions")
+  const [currentSubMenu, setSubMenuKey] = React.useState("birdsAndWaterfowl")
   const subMenuItemsForPage = [
     {
-      linkText: "For the Professions",
-      key: "forTheProfessions",
+      linkText: "Birds & Waterfowl",
+      key: "birdsAndWaterfowl",
     },
     {
-      linkText: "Golf Course",
-      key: "golfCourse",
+      linkText: "Animals & Farm",
+      key: "animalsAndFarm",
     },
     {
-      linkText: "Mounting Methods",
-      key: "mountingMethods",
+      linkText: "Dogs & Cats",
+      key: "dogsAndCats",
     },
     {
-      linkText: "Municipal and BIA",
-      key: "municipalAndBia",
+      linkText: "Aquatic & Nautical",
+      key: "aquaticAndNautical",
+    },
+    {
+      linkText: "Flowers & Fruit",
+      key: "flowersAndFruit",
+    },
+    {
+      linkText: "Misc.",
+      key: "misc",
     },
   ]
   const onSubMenuItemClick = subMenuKey => {
@@ -65,7 +74,7 @@ const IndexPage = () => {
         onSubMenuItemClick={onSubMenuItemClick}
         subMenuItems={subMenuItemsForPage}
       />
-      <SEO title="Sign Types" />
+      <SEO title="Emblems and Motifs" />
       <div className={classes.contentContainer}>
         <div>
           {/*
@@ -89,28 +98,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
-
-// https://github.com/gatsbyjs/gatsby/issues/4843
-// This query can be pasted in the graphiql console
-// and if that bug above is resolved will return just main_x items
-// const data = useStaticQuery(graphql`
-// query {
-//   allImageSharp(filter: {fluid: {originalName: {regex: "/^main_\\w+/gm"}}}) {
-//     edges {
-//       node {
-//         id
-//         fluid {
-//           base64
-//           src
-//           aspectRatio
-//           src
-//           srcSet
-//         }
-//       }
-//     }
-//   }
-// }
-// `);
-// {data.allImageSharp.edges.map((edge) => (<div><Img fluid={edge.node.fluid} /></div>))}
-//
+export default EmblemsAndMotifs

@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "Cambridge Metalsmiths",
-    description: "Cambridgemetalsmiths is a local company.",
+    description:
+      "Serving Cast Aluminum Signage to Cambridge and Beyond for Over 20 Years",
     author: "@iamstevedavis",
   },
   plugins: [
@@ -19,9 +20,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
-        start_url: "/",
+        name: "Cambridge-Metalsmiths",
+        short_name: "CambridgeMetalsmiths",
+        start_url: "",
         background_color: "#663399",
         theme_color: "#663399",
         display: "minimal-ui",

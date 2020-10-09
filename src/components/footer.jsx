@@ -38,7 +38,7 @@ Footer.propTypes = {
 }
 
 Footer.defaultProps = {
-  siteTitle: "",
+  siteTitle: "Cambridge Metalsmiths",
 }
 
 export default Footer

@@ -1,8 +1,9 @@
-import { makeStyles } from "@material-ui/core/styles"
 import { graphql, useStaticQuery } from "gatsby"
+
 import Img from "gatsby-image"
 import React from "react"
 import { isBrowser } from "react-device-detect"
+import { makeStyles } from "@material-ui/core/styles"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SubNavBar from "../components/subnavbar"
@@ -171,7 +172,7 @@ const pageComponents = (key, images) => {
         return (
           <object
             type="application/pdf"
-            aria-label=""
+            aria-label="Prices"
             width="100%"
             height="1257px"
             data={prices}
@@ -193,7 +194,7 @@ const pageComponents = (key, images) => {
   }
 }
 
-const IndexPage = () => {
+const General = () => {
   const classes = useStyles()
   const query = useStaticQuery(graphql`
     query {
@@ -246,4 +247,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default General
