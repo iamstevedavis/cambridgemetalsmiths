@@ -9,6 +9,7 @@ import React from "react"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
+import Hidden from "@material-ui/core/Hidden"
 
 const useStyles = makeStyles({
   appBarLarge: {
@@ -48,10 +49,12 @@ export default function ElevateAppBar(props) {
         <Toolbar>
           <Grid container direction="row" spacing={3} xs={5}>
             <Grid item spacing={1}>
-              <Img
-                className={classes.headerImage}
-                fluid={headerLogoData.placeholderImage.childImageSharp.fluid}
-              />
+              <Hidden mdDown>
+                <Img
+                  className={classes.headerImage}
+                  fluid={headerLogoData.placeholderImage.childImageSharp.fluid}
+                />
+              </Hidden>
             </Grid>
             <Grid item spacing={1}>
               <Typography variant="h6" style={{ lineHeight: "75px" }}>
