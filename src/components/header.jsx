@@ -2,7 +2,6 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 
 /* eslint-disable react/jsx-props-no-spreading */
 import AppBar from "@material-ui/core/AppBar"
-// import CssBaseline from "@material-ui/core/CssBaseline"
 import Grid from "@material-ui/core/Grid"
 import Img from "gatsby-image"
 import PropTypes from "prop-types"
@@ -57,7 +56,6 @@ export default function ElevateAppBar(props) {
 
   return (
     <>
-      {/* <CssBaseline /> */}
       <ElevationScroll {...props}>
         <AppBar className={classes.appBar} position="sticky">
           <Toolbar>

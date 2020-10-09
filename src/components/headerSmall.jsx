@@ -17,9 +17,6 @@ import { Link } from "gatsby"
 
 const drawerWidth = 240
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex",
-  },
   drawer: {
     [theme.breakpoints.up("sm")]: {
       width: drawerWidth,
@@ -85,7 +82,7 @@ function ResponsiveDrawer(props) {
   )
 
   return (
-    <div className={classes.root}>
+    <div style={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>

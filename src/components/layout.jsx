@@ -9,11 +9,10 @@ import "./layout.css"
 
 import { graphql, useStaticQuery } from "gatsby"
 
-// import Header from "./header"
 import PropTypes from "prop-types"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-// import Grid from "@material-ui/core/Grid"
+import CssBaseline from "@material-ui/core/CssBaseline"
 import { useMediaQuery } from "react-responsive"
 import Footer from "./footer"
 import ElevateAppBar from "./header"
@@ -45,6 +44,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <CssBaseline />
       {isDesktopOrLaptop ? (
         <ElevateAppBar siteTitle={data.site.siteMetadata.title} />
       ) : (

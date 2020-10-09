@@ -2,14 +2,10 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import Img from "gatsby-image"
 import React from "react"
-// import { makeStyles } from "@material-ui/core/styles"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-// const useStyles = makeStyles(() => ({}))
-
 const Home = () => {
-  // const classes = useStyles()
   const query = useStaticQuery(graphql`
     query {
       allImageSharp(filter: {fluid: {originalName: {regex: "/^main_\\w+/"}}}) {
@@ -62,7 +58,7 @@ const Home = () => {
         <div>
           {query.allImageSharp.edges.map(edge => {
             return (
-              <div>
+              <div key={edge.node.id}>
                 <Img fluid={edge.node.fluid} />
               </div>
             )
