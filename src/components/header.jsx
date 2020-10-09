@@ -16,7 +16,6 @@ const useStyles = makeStyles({
   appBar: {
     backgroundColor: "black",
     padding: "1%",
-    position: "sticky",
   },
   toolbar: {
     flexGrow: 1,
@@ -60,7 +59,7 @@ export default function ElevateAppBar(props) {
     <>
       {/* <CssBaseline /> */}
       <ElevationScroll {...props}>
-        <AppBar className={classes.appBar}>
+        <AppBar className={classes.appBar} position="sticky">
           <Toolbar>
             <Grid container direction="row" spacing={3} xs={5}>
               <Grid item spacing={1}>
@@ -141,7 +140,7 @@ ElevateAppBar.propTypes = {
 }
 
 ElevateAppBar.defaultProps = {
-  siteTitle: "",
+  siteTitle: "Cambridge Metalsmiths",
 }
 
 ElevationScroll.propTypes = {
