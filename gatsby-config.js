@@ -22,7 +22,7 @@ module.exports = {
       options: {
         name: "Cambridge-Metalsmiths",
         short_name: "CambridgeMetalsmiths",
-        start_url: "",
+        start_url: "/",
         background_color: "#663399",
         theme_color: "#663399",
         display: "minimal-ui",

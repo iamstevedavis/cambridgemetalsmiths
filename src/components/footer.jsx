@@ -22,11 +22,11 @@ const Footer = ({ siteTitle }) => {
       </div>
       <div className={classes.footerFlexContainer}>
         <span>
-          29 Rife Ave.,Cambridge ON N3C 2G6
+          63 Sheffield St Unit 12, Cambridge, ON N3C 2G6
           <br />
           Phone: (519) 658-3124
           <br />
-          Email: terry@cambridgemetalsmiths.com
+          Email: info@cambridgemetalsmiths.com
         </span>
       </div>
     </footer>
